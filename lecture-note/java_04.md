@@ -21,6 +21,7 @@
   - string 타입은 ```==``` 기호로 비교할 수 없음.
   - 항상 ```equals()``` 함수를 사용해서 비교해야함.
 
+<br><br>
 
 ## loop
 
@@ -45,6 +46,7 @@
             System.out.println(isFound ? "Found it at " +i : "Didn't find it")
             // Found it at 12
 ```
+<br><br>
 
 ### 이클립스 단축키
 - 자동 줄 맞춤
