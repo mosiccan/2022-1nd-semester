@@ -60,3 +60,8 @@
     > 복사하고자 하는 줄에 커서를 두고
     - Windows : ```alt + control + (⬇️/⬆️)```
     - MacOS : ```command + option + (⬇️/⬆️)```
+- 폰트 변경
+    - Window → Preferences General 
+    - → Appearance → Colors and Fonts
+    - Basic 탭 안에 Text Font → Edit
+    - 확인 → Apply and Close
