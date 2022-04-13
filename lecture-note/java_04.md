@@ -51,15 +51,15 @@
 ### 이클립스 단축키
 - 자동 줄 맞춤
   - Windows : ```ctrl + shift + f```
-  - MacOS : ```command + shift + f```
+  - macOS : ```command + shift + f```
 - 전체 주석 
     > 원하는 영역 지정 후 
   - Windows : ```ctrl + /```
-  - MacOS : ```command + /```
+  - macOS : ```command + /```
 - 한 줄 복사
     > 복사하고자 하는 줄에 커서를 두고
     - Windows : ```alt + control + (⬇️/⬆️)```
-    - MacOS : ```command + option + (⬇️/⬆️)```
+    - macOS : ```command + option + (⬇️/⬆️)```
 - 폰트 변경
     - Window → Preferences General 
     - → Appearance → Colors and Fonts
