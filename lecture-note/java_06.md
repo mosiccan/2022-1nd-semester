@@ -51,3 +51,38 @@
 - this의 필요성
   - 객체의 멤버 변수와 메소드 변수의 이름이 같은 경우
   - 객체 자신에 대한 참조를 메소드에 전달 또는 반환할 때
+
+## 객체도 배열로 만들 수 있다.
+### 객체를 생성한게 아닌 경우
+```java
+  Dog pets[];
+  pets = new Dog[5];
+```
+  - 객체가 5개 생성되는게 아님
+  - 5개의 레퍼런스가 생성되는 것!
+<br><br>
+
+### 올바른 예시
+```java
+  Dog pets[];
+  pets[0] = new Dog();  // 객체가 생성됨
+  pets[1] = new Dog();
+  pets[0].size = 21;
+```
+###
+
+```java
+public static void main(String [] args) { 
+  Person[] pa;
+  pa = new Person[10];  // 10개의 레퍼런스 생성
+  for (int i=0;i<pa.length;i++) { 
+    pa[i] = new Person(); 
+    pa[i].age = 30 + i;
+  }
+
+  for (int i=0;i<pa.length;i++) 
+    System.out.print(pa[i].age+” “);
+}
+
+30 31 32 33 34 35 36 37 38 39
+```
