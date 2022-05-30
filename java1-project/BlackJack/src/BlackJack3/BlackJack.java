@@ -19,7 +19,7 @@ public class BlackJack implements KeyListener {
 	private int originalPlayerCost;
 	private int currentBetAmount = 0;
 
-	private static String[] SUITS = { "(¢À)", "(¡ß)", "(¢¾)", "(¢¼)" };
+	private static String[] SUITS = { "(â™£)", "(â—†)", "(â™¥)", "(â™ )" };
 
 	private boolean gameEnd = false;
 	private boolean playerBusted = false;
@@ -65,7 +65,7 @@ public class BlackJack implements KeyListener {
 		dealerCards = new ArrayList<>();
 		deck = getDeck();
 
-		// »óÅÂ ¹× °á°ú ÃÊ±âÈ­
+		// ìƒíƒœ ë° ê²°ê³¼ ì´ˆê¸°í™”
 		gameEnd = false;
 		playerBusted = false;
 		dealerBusted = false;
@@ -73,7 +73,7 @@ public class BlackJack implements KeyListener {
 		gameResult = 0;
 		gameState = 0;
 
-		// Ä«µå 2Àå¾¿ ³ª´²ÁÖ±â
+		// ì¹´ë“œ 2ì¥ì”© ë‚˜ëˆ ì£¼ê¸°
 		for (int i = 0; i < 2; i++) {
 			playerCards.add(getCard());
 			dealerCards.add(getCard());
@@ -106,7 +106,7 @@ public class BlackJack implements KeyListener {
 			frame.addText(tempCard.printCard());
 			frame.addText("XX");
 		} else {
-			// °ÔÀÓ Á¾·á ÆÇÁ¤ÀÌ µÇ¾úÀ» ¶§ dealer Ãâ·Â ºÎºĞ
+			// ê²Œì„ ì¢…ë£Œ íŒì •ì´ ë˜ì—ˆì„ ë•Œ dealer ì¶œë ¥ ë¶€ë¶„
 			for (int i = 0; i < dealerCards.size(); i++) {
 				tempCard = dealerCards.get(i);
 				frame.addText(tempCard.printCard());
@@ -114,7 +114,7 @@ public class BlackJack implements KeyListener {
 		}
 
 		frame.addText("\n       # Player($" + playerCost + ")\t");
-		// playerCards Ãâ·ÂÇÏ±â
+		// playerCards ì¶œë ¥í•˜ê¸°
 		for (int i = 0; i < playerCards.size(); i++) {
 			tempCard = playerCards.get(i);
 			frame.addText(tempCard.printCard());
@@ -126,7 +126,7 @@ public class BlackJack implements KeyListener {
 	private ArrayList<Card> getDeck() {
 		ArrayList<Card> deck = new ArrayList<Card>();
 
-		// µ¦ ¼øÂ÷ÀûÀ¸·Î »ı¼ºÇÏ±â
+		// ë± ìˆœì°¨ì ìœ¼ë¡œ ìƒì„±í•˜ê¸°
 		for (String suit : SUITS) {
 			for (int i = 1; i <= 13; i++) {
 				String rank;
@@ -151,12 +151,12 @@ public class BlackJack implements KeyListener {
 				deck.add(card);
 			}
 		}
-		Collections.shuffle(deck);	// µ¦ ¼¯±â
+		Collections.shuffle(deck);	// ë± ì„ê¸°
 		return deck;
 	}
 
 	private void hit() {
-		// °¢°¢ Ä«µå ÇÏ³ª¾¿ ³ª´²ÁÖ±â
+		// ê°ê° ì¹´ë“œ í•˜ë‚˜ì”© ë‚˜ëˆ ì£¼ê¸°
 		playerCards.add(getCard());
 		dealerCards.add(getCard());
 		if (getPoints(playerCards) > 21) { // Player busted
@@ -195,7 +195,7 @@ public class BlackJack implements KeyListener {
 		for (int i = 0; i < cards.size(); i++) {
 			number = cards.get(i).getRank();
 
-			if (number.equals("A")) { // 11·Î ´Ù ´õÇÏ±â
+			if (number.equals("A")) { // 11ë¡œ ë‹¤ ë”í•˜ê¸°
 				points += 11;
 			} else if (number.equals("J") || number.equals("Q") || number.equals("K")) {
 				points += 10;
@@ -205,7 +205,7 @@ public class BlackJack implements KeyListener {
 		}
 		for (int i = 0; i < cards.size(); i++) {
 			number = cards.get(i).getRank();
-			if (number.equals("A") && points > 21) { // ÃÑ ÇÕÀÌ 21ÀÌ ³ÑÀ¸¸é AÄ«µå ÇÏ³ª´ç 10 »©±â
+			if (number.equals("A") && points > 21) { // ì´ í•©ì´ 21ì´ ë„˜ìœ¼ë©´ Aì¹´ë“œ í•˜ë‚˜ë‹¹ 10 ë¹¼ê¸°
 				points -= 10;
 			}
 		}
@@ -238,7 +238,7 @@ public class BlackJack implements KeyListener {
 			if (file.exists()) {
 				file.delete();
 			}
-			return;	// °ÔÀÓÀÌ ³¡³µÀ¸¹Ç·Î returnÀ» ÇÏ¿© ÇÔ¼ö¸¦ ³¡³¿
+			return;	// ê²Œì„ì´ ëë‚¬ìœ¼ë¯€ë¡œ returnì„ í•˜ì—¬ í•¨ìˆ˜ë¥¼ ëëƒ„
 		}
 
 		if (gameEnd == false) {
@@ -329,14 +329,14 @@ public class BlackJack implements KeyListener {
 	public void keyPressed(KeyEvent e) {
 		switch (e.getKeyCode()) {
 		case KeyEvent.VK_1: {
-			// ¹èÆÃ È­¸é Ãâ·Â
+			// ë°°íŒ… í™”ë©´ ì¶œë ¥
 			if (gameState != 1)
 				break;
 			initElements();
 			break;
 		}
 		case KeyEvent.VK_2: {
-			// ¹èÆÃ È­¸é Ãâ·Â
+			// ë°°íŒ… í™”ë©´ ì¶œë ¥
 			if (gameState != 1)
 				break;
 			loadData();
